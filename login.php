@@ -21,7 +21,7 @@
         <div class="wrapper cf">
         
             <div id="logo">
-            	<a href="index.html">
+            	<a href="index.php">
                 	<img src="images/exotic_destinations_logo.svg" alt="Exotic Destination">
                 </a>
          	</div>
@@ -30,9 +30,9 @@
         	
             <ul>
                             
-                	<li><a href="index.html">Home</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
-                    <li><a href="my_wishlist.html">My Wishlist<i class="far fa-heart"></i></a></li>
+                	<li><a href="index.php">Home</a></li>
+                    <li><a href="contact_us.php">Contact Us</a></li>
+                    <li><a href="my_wishlist.php">My Wishlist<i class="far fa-heart"></i></a></li>
                  
          	</ul>
         
@@ -55,7 +55,7 @@
                     
                     <div class="login_form">
                     
-                    	<form action="login_success.html" method="get">
+                    	<form action="login_success.php" method="get">
                             
                             <label>Username</label><br>
                             <input type="text" name="email" autocomplete="off" placeholder="&nbsp;Username" required>
@@ -67,7 +67,7 @@
                             
                         <div class="no_account">
                        
-                        	<a href="register.html">I do not have an account.<span>Create one!</span></a>
+                        	<a href="register.php">I do not have an account.<span>Create one!</span></a>
                         
                         </div>
                         

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Exotic Destinations | Login Successfull</title>
+<title>Exotic Destinations | Confirm Account Page</title>
 
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
@@ -21,7 +21,7 @@
         <div class="wrapper cf">
         
             <div id="logo">
-            	<a href="index.html">
+            	<a href="index.php">
                 	<img src="images/exotic_destinations_logo.svg" alt="Exotic Destination">
                 </a>
          	</div>
@@ -30,9 +30,9 @@
         	
             <ul>
                             
-                	<li><a href="index.html">Home</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
-                    <li><a href="my_wishlist.html">My Wishlist<i class="far fa-heart"></i></a></li>
+                	<li><a href="index.php">Home</a></li>
+                    <li><a href="contact_us.php">Contact Us</a></li>
+                    <li><a href="my_wishlist.php">My Wishlist<i class="far fa-heart"></i></a></li>
                  
          	</ul>
         
@@ -44,23 +44,23 @@
         
 <section id="choose_bar" class="wrapper">
 
-        		<div id="login_success_container">
+        		<div id="login_account_container">
                 
                 
-                	<div class="login_success_top">
+                	<div class="login_account_top">
                     
-                    	<p>Dear Petar, you succesfully logged in!</p>
+                    	<p>Do you have an account?</p>
                     
-                    </div><!-- login_success_top -->
+                    </div><!-- login_account_top -->
                     
                 	<div id="button_holder" class="cf">
                     
-                    	<a href="index.html"><button class="left">Back to offers</button></a>
-                        <a href="summary.html"><button class="right">Continue with purchase</button></a>
+                    	<a href="login.php"><button class="left">Yes, log me in</button></a>
+                        <a href="register.php"><button class="right">No, I don't have an account</button></a>
                     
                     </div>
                 
-                </div><!-- end login_success_container-->  
+                </div><!-- end login_account_container -->  
     
 </section><!-- end choose_bar -->      
     		

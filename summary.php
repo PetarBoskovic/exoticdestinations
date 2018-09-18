@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Exotic Destinations | Wishlist Page</title>
+<title>Exotic Destinations | Summary Page</title>
 
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
@@ -22,7 +22,7 @@
         <div class="wrapper cf">
         
             <div id="logo">
-            	<a href="index.html">
+            	<a href="index.php">
                 	<img src="images/exotic_destinations_logo.svg" alt="Exotic Destination">
                 </a>
          	</div>
@@ -31,8 +31,9 @@
         	
             <ul>
                             
-                	<li><a href="index.html">Home</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
+                	<li><a href="index.php">Home</a></li>
+                    <li><a href="contact_us.php">Contact Us</a></li>
+                    <li><a href="my_wishlist.php">My Wishlist<i class="far fa-heart"></i></a></li>
                  
          	</ul>
         
@@ -47,36 +48,45 @@
         		
     <div id="top_bar"  class="cf">
                 
-                 <div id="center_wishlist" class="choose">
-                       <p>My Wishlist<i class="far fa-heart"></i></p>
+                 <div class="choose">
+                       <p>Reservation details</p>
+                 </div>
+                        
+                 <div class="login">
+                       <a href="login.php">Login</a>
+                       <a href="register.php">Register</a>
                  </div>
                 
      </div><!-- end top bar -->
         
      <div class="form_holder">
         
-        <form action="#" method="get">
+        <form action="booked.php" method="post">
         
             <div id="middle_bar"  class="cf">
             
-                <div id="wishlist_details">
+                <div id="destination_details">
                 	
+                    <label>Customer name:&nbsp;:&nbsp; Petar Boskovic</label>
 					<label>Destination&nbsp;:&nbsp; Gozo, Malta</label>
                     <img src="images/gozo_malta.jpg" alt="gozo_malta">
-                         
-                         <div>
-                         
-                            
-                         
-                         </div>
-                         
-               </div><!-- end wishlist_details --> 
+                    <label>Number of passengers&nbsp;: 7 </label>
+                	<label>Total price&nbsp;: $200 </label>
+                
+                
+                
+                     <div class="reserve_holder">
+                          <input type="submit" name="summary_details" value="Confirm">
+                     </div>
+                 
+               </div><!-- end destination_details --> 
                
            </div><!-- end middle bar -->
            
-     	</form>
+     </form>
    
   	</div><!-- end form_holder -->  
+                          
                  
 </section><!-- end choose_bar -->      
     		

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Exotic Destinations | Wishlist Successfull</title>
+<title>Exotic Destinations | Register Successfull</title>
 
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
@@ -21,7 +21,7 @@
         <div class="wrapper cf">
         
             <div id="logo">
-            	<a href="index.html">
+            	<a href="index.php">
                 	<img src="images/exotic_destinations_logo.svg" alt="Exotic Destination">
                 </a>
          	</div>
@@ -30,9 +30,9 @@
         	
             <ul>
                             
-                	<li><a href="index.html">Home</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
-                    <li><a href="my_wishlist.html">My Wishlist<i class="far fa-heart"></i></a></li>
+                	<li><a href="index.php">Home</a></li>
+                    <li><a href="contact_us.php">Contact Us</a></li>
+                    <li><a href="my_wishlist.php">My Wishlist<i class="far fa-heart"></i></a></li>
                  
          	</ul>
         
@@ -44,22 +44,23 @@
         
 <section id="choose_bar" class="wrapper">
 
-        		<div id="wishlist_success_container">
+        		<div id="register_success_container">
                 
                 
-                	<div class="wishlist_success_top">
+                	<div class="register_success_top">
                     
-                    	<p>Dear Petar, you wishlist is updated successfully!</p>
+                    	<p>Dear Petar, you succesfully registered!</p>
                     
-                    </div><!-- wishlist_success_top -->
+                    </div><!-- register_success_top -->
                     
                 	<div id="button_holder" class="cf">
                     
-                    	<a href="my_wishlist.html"><button>See my wishlist</button></a>
+                    	<a href="index.php"><button class="left">Back to offers</button></a>
+                        <a href="summary.php"><button class="right">Continue with purchase</button></a>
                     
                     </div>
                 
-                </div><!-- end wishlist_success_container-->  
+                </div><!-- end register_success_container -->  
     
 </section><!-- end choose_bar -->      
     		

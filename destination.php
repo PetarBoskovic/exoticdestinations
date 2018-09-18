@@ -22,7 +22,7 @@
         <div class="wrapper cf">
         
             <div id="logo">
-            	<a href="index.html">
+            	<a href="index.php">
                 	<img src="images/exotic_destinations_logo.svg" alt="Exotic Destination">
                 </a>
          	</div>
@@ -31,9 +31,9 @@
         	
             <ul>
                             
-                	<li><a href="index.html">Home</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
-                    <li><a href="my_wishlist.html">My Wishlist<i class="far fa-heart"></i></a></li>
+                	<li><a href="index.php">Home</a></li>
+                    <li><a href="contact_us.php">Contact Us</a></li>
+                    <li><a href="my_wishlist.php">My Wishlist<i class="far fa-heart"></i></a></li>
                  
          	</ul>
         
@@ -53,15 +53,15 @@
                  </div>
                         
                  <div class="login">
-                       <a href="login.html">Login</a>
-                       <a href="register.html">Register</a>
+                       <a href="login.php">Login</a>
+                       <a href="register.php">Register</a>
                  </div>
                 
      </div><!-- end top bar -->
         
      <div class="form_holder">
         
-        <form action="account.html" method="post">
+        <form action="account.php" method="post">
         
             <div id="middle_bar"  class="cf">
             
@@ -91,7 +91,7 @@
                           
            <div id="bottom_bar" class="cf">
                         
-                    <form action="wishlist_success.html" method="post">
+                    <form action="wishlist_success.php" method="post">
                         <div class="wishlist wrapper">
                             <input type="submit" name="add_to_wishlist" value="Add to My Wishlist">
                         </div>

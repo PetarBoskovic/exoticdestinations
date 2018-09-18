@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Exotic Destinations | Home Page</title>
 
+<link href="css/normalize.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -35,7 +36,7 @@
         <div class="wrapper cf">
         
             <div id="logo">
-            	<a href="index.html">
+            	<a href="index.php">
                 	<img src="images/exotic_destinations_logo.svg" alt="Exotic Destination">
                 </a>
          	</div>
@@ -44,9 +45,9 @@
         	
             <ul>
                             
-                	<li><a href="index.html">Home</a></li>
-                    <li><a href="contact_us.html">Contact Us</a></li>
-                    <li><a href="my_wishlist.html">My Wishlist<i class="far fa-heart"></i></a></li>
+                	<li><a href="index.php">Home</a></li>
+                    <li><a href="contact_us.php">Contact Us</a></li>
+                    <li><a href="my_wishlist.php">My Wishlist<i class="far fa-heart"></i></a></li>
                  
          	</ul>
         
@@ -66,21 +67,21 @@
                  </div>
                         
                  <div class="login">
-                       <a href="login.html">Login</a>
-                       <a href="register.html">Register</a>
+                       <a href="login.php">Login</a>
+                       <a href="register.php">Register</a>
                  </div>
                 
      </div><!-- end top bar -->
         
      <div class="form_holder">
         
-        <form action="destination.html" method="post">
+        <form action="destination.php" method="post">
         
             <div id="middle_bar" class="cf">
             
                 <div class="destination_holder">
                 
-                    <select name="destination_title" placeholder="&nbsp;Choose Destination" required>
+                    <select name="destination_title" placeholder="&nbsp;Choose Destination">
                             <option  value="1">&nbsp;Choose Destination</option>
                             <option  value="2">&nbsp;Choose Destination</option>
                             <option  value="3">&nbsp;Choose Destination</option>
@@ -91,12 +92,12 @@
                         
                           <div class="date_holder_left" >
                                <input type="hidden" name="date_from_value" value="#">
-                               <input type="text" class="datepicker"  name="date_from" autocomplete="off" placeholder="Date from" required>
+                               <input type="text" class="datepicker"  name="date_from" autocomplete="off" placeholder="Date from">
                           </div>
                             
                           <div class="date_holder_right">
                                <input type="hidden" name="date_to_value" value="#">
-                               <input type="text" class="datepicker" name="date_to" autocomplete="off" placeholder="Date to" required>
+                               <input type="text" class="datepicker" name="date_to" autocomplete="off" placeholder="Date to">
                           </div>
                         
                     </div>
