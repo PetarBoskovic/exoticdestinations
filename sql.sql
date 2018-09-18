@@ -54,3 +54,6 @@ CREATE TABLE `exotic`.`destinations` (
     ON UPDATE NO ACTION);
 
 
+ALTER TABLE `exotic`.`destinations` 
+CHANGE COLUMN `date_from` `date_from` DATETIME NOT NULL ,
+CHANGE COLUMN `date_to` `date_to` DATE NOT NULL ;

@@ -1,61 +1,15 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Exotic Destinations | Home Page</title>
+<?php
+    session_start();
+    include 'classes/DB.php';
+    include 'classes/Destination.php';
 
-<link href="css/normalize.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
+    $destinations = Destination::getAll();
+    // include 'classes/User.php';
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    // $user = User::current();
 
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-
-
-<link rel="stylesheet" href="css/jquery-ui.css">
-<link rel="stylesheet" href="css/jquery-ui.theme.min.css">
-
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
-<script src="js/jquery-ui.js"></script>
-
-<script>
-
-		$(document).ready(function() {
-				$(".datepicker").datepicker(); 
-		});
-		
-
-</script>
-</head>
-
-<body>
-
-<header id="header">
-    	
-        <div class="wrapper cf">
-        
-            <div id="logo">
-            	<a href="index.php">
-                	<img src="images/exotic_destinations_logo.svg" alt="Exotic Destination">
-                </a>
-         	</div>
-            
-        <nav id="nav">
-        	
-            <ul>
-                            
-                	<li><a href="index.php">Home</a></li>
-                    <li><a href="contact_us.php">Contact Us</a></li>
-                    <li><a href="my_wishlist.php">My Wishlist<i class="far fa-heart"></i></a></li>
-                 
-         	</ul>
-        
-        </nav>
-        
-        </div>
-        
-</header>  
+    include "partials/header.php";
+?> 
         
 <section id="choose_bar" class="wrapper">
 
@@ -80,14 +34,16 @@
             <div id="middle_bar" class="cf">
             
                 <div class="destination_holder">
-                
-                    <select name="destination_title" placeholder="&nbsp;Choose Destination">
-                            <option  value="1">&nbsp;Choose Destination</option>
-                            <option  value="2">&nbsp;Choose Destination</option>
-                            <option  value="3">&nbsp;Choose Destination</option>
-                            <option  value="4">&nbsp;Choose Destination</option>
+                    <?php if (count($destinations)) : ?>
+                    <select name="destination_title">
+                        <option value="0">Choose your destination</option>
+                        <?php foreach($destinations as $destination) : ?>
+                        <option value="<?php echo $destination->id; ?>"><?php echo $destination->title; ?></option>
+                        <?php endforeach; ?>
                     </select>
-                        
+                    <?php else : ?>
+                    <p>Trenutno nemamo destinacija</p>
+                    <?php endif; ?>
                     <div id="date_holder">
                         
                           <div class="date_holder_left" >
@@ -122,7 +78,6 @@
 </section><!-- end choose_bar -->      
     		
   
-         
-
-</body>
-</html>
+<?php
+    include "partials/footer.php";
+?> 
