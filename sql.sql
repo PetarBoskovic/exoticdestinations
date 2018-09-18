@@ -12,7 +12,7 @@ CREATE TABLE `exotic`.`destinations` (
   `title` VARCHAR(45) NULL,
   `description` VARCHAR(255) NULL,
   `price` INT NULL,
-  `img_path` VARCHAR(45) NULL,
+  `img_path` VARCHAR(255) NULL,
   `date_from` DATETIME NULL,
   `date_to` DATE NULL,
   PRIMARY KEY (`id`));

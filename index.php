@@ -8,6 +8,13 @@
 
     // $user = User::current();
 
+    // TODO: Ako je poslat POST request uzeti 'destination_title'
+    // Uraditi pretragu sa Destinations::getAllByTitle($destination_title);
+    // getAllByTitle ima SQL query sa LIKE %:destination_title%
+    // getAllByTitle vraca niz destinacija
+    // ako nema rezultata napisi error poruku
+    // ako ima rezultata pregazi $destinations sa vracenim destinacijama
+
     include "partials/header.php";
 ?> 
         
@@ -33,31 +40,18 @@
         
             <div id="middle_bar" class="cf">
             
-                <div class="destination_holder">
-                    <?php if (count($destinations)) : ?>
-                    <select name="destination_title">
-                        <option value="0">Choose your destination</option>
-                        <?php foreach($destinations as $destination) : ?>
-                        <option value="<?php echo $destination->id; ?>"><?php echo $destination->title; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                    <?php else : ?>
-                    <p>Trenutno nemamo destinacija</p>
-                    <?php endif; ?>
-                    <div id="date_holder">
-                        
-                          <div class="date_holder_left" >
-                               <input type="hidden" name="date_from_value" value="#">
-                               <input type="text" class="datepicker"  name="date_from" autocomplete="off" placeholder="Date from">
-                          </div>
-                            
-                          <div class="date_holder_right">
-                               <input type="hidden" name="date_to_value" value="#">
-                               <input type="text" class="datepicker" name="date_to" autocomplete="off" placeholder="Date to">
-                          </div>
-                        
+                <div class="destinations_holder">
+                    <input type="text" name="destination_title" placeholder="Enter destination name" />
+                    <div>
+                        <?php if (count($destinations)) : ?>
+                            <?php foreach($destinations as $destination) : ?>
+                                Naslov: <?php echo $destination->title; ?>
+                                <img src="<?php echo $destination->img_path; ?>" />
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                        <p>Trenutno nemamo destinacija</p>
+                        <?php endif; ?>
                     </div>
-                 
                </div>
                 
            </div><!-- end middle bar -->
