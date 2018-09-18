@@ -1,9 +1,9 @@
 <?php 
 class DB {
     static $connection = null;
-    static $username = 'exoticuser';
-    static $password = 'exoticpass';
-    static $host = 'db';
+    static $username = 'root';
+    static $password = '';
+    static $host = 'localhost';
     static $dbname = 'exotic';
 
     public static function getConnection(){
