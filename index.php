@@ -2,8 +2,16 @@
     session_start();
     include 'classes/DB.php';
     include 'classes/Destination.php';
+    include 'classes/User.php';
 
     $destinations = Destination::getAll();
+
+    $messageForUser = "";
+
+    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+        $messageForUser = 'Welcome ' . User::current()->username . '!';
+        $_SESSION['logged_in'] = false;
+    }
 
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['destination_title'])) {
         // Search destinations in db
@@ -14,7 +22,12 @@
     include "partials/header.php";
 ?>
 <div class="wrapper">
+
+    
     <section id="destinations-page">
+    <?php if (!empty($messageForUser)) : ?>
+        <div class="alert alert-success"><?= $messageForUser; ?></div>
+    <?php endif; ?>
         <div id="top_bar" class="cf">
             <div class="choose">
                 <p>Search Offers</p>

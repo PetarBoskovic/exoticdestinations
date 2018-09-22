@@ -61,12 +61,16 @@
 
 <div class="wrapper">
     <section id="destination-page">
-        <div><?= $messageForUser; ?></div>
+        <?php if (!empty($messageForUser)) : ?>
+            <div class="alert alert-success"><?= $messageForUser; ?></div>
+        <?php endif; ?>
         <div class="destination-info">
             <h1><?= $destination->title; ?></h1>
             <p><?= $destination->description; ?></p>
             <img src="<?= $destination->img_path; ?>" alt="<?= $destination->title; ?>">
-            <div class="destination-price">Price&nbsp;(per person)&nbsp;: $<span id="pricePerPerson"><?= $destination->price; ?></span> </div>
+            <div class="destination-price">
+                Price&nbsp;(per person)&nbsp;: $<span id="pricePerPerson"><?= $destination->price; ?></span>
+            </div>
         </div>
         <div class="form_holder">
             <form action="summary.php" method="post">
@@ -93,7 +97,7 @@
                         <input type="submit" name="remove_from_wishlist" value="Remove from My Wishlist">
                     </div>
                 </form>
-            <?php else: ?>
+            <?php else : ?>
                 <form action="" method="post">
                     <div class="wishlist wrapper">
                         <input type="hidden" name="destination_id" value="<?= $destination->id; ?>" />
@@ -101,11 +105,9 @@
                     </div>
                 </form>
             <?php endif; ?>
-
         </div><!-- end bottom bar -->
-
-    </section><!-- end choose_bar -->
-</div>
+    </section><!-- end destination-page -->
+</div><!-- end wrapper -->
 <?php
     include "partials/footer.php";
 ?>

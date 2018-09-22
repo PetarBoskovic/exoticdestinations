@@ -78,6 +78,7 @@ class User {
             $this->id = $user['id'];
             $this->email = $user['email'];
             $_SESSION['user_id'] = $this->id;
+            $_SESSION['logged_in'] = true;
             return $this;
         }
 
