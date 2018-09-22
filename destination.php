@@ -1,65 +1,111 @@
 <?php
-    include "partials/header.php";
-?> 
-        
-<section id="choose_bar" class="wrapper">
+    session_start();
+    include 'classes/DB.php';
+    include 'classes/Destination.php';
+    include 'classes/User.php';
+    include 'classes/Wishlist.php';
 
-        		
-    <div id="top_bar"  class="cf">
-                
-                 <div class="choose">
-                       <p>Reservation details</p>
-                 </div>
-                        
-                 <div class="login">
-                       <a href="login.php">Login</a>
-                       <a href="register.php">Register</a>
-                 </div>
-                
-     </div><!-- end top bar -->
-        
-     <div class="form_holder">
-        
-        <form action="account.php" method="post">
-        
-            <div id="middle_bar"  class="cf">
-            
-                <div id="destination_details">
-                	
-					<label>Destination&nbsp;:&nbsp; Gozo, Malta</label>
-                    <label>Destination description&nbsp;:&nbsp;<span>The enchanting island of Gozo is an integral part of the Maltese archipelago. Besides being one of the top diving destinations in the Mediterranean, it boasts of mystical backwaters, historical forts and amazing panoramas.</span></label>
-                    <img src="images/gozo_malta.jpg" alt="gozo_malta">
-                    <label>Price&nbsp;(per person)&nbsp;: $100 </label>
-                    <input type="number" name="quantity" placeholder="&nbsp;Number of persons" min="1" max="20" required>
-                	<label>Total price&nbsp;: $200 </label>
-                
-                
-                
-                     <div class="reserve_holder">
-                     
-                                <input type="submit" name="summary_details" value="Reserve">
-                     </div>
-                 
-               </div><!-- end destination_details --> 
-               
-           </div><!-- end middle bar -->
-           
-     </form>
-   
-  	</div><!-- end form_holder -->  
-                          
-           <div id="bottom_bar" class="cf">
-                        
-                    <form action="wishlist_success.php" method="post">
-                        <div class="wishlist wrapper">
-                            <input type="submit" name="add_to_wishlist" value="Add to My Wishlist">
+    $messageForUser = '';
+
+    if (isset($_GET['id'])) {
+        // Search destinations in db
+        $id = $_GET['id'];
+        $destination = Destination::getById($id);
+        $user = User::current();
+        $isInWishlist = false;
+        if ($user) {
+            $isInWishlist = Wishlist::entryExists($user->id, $destination->id);
+        }
+    } else {
+        header('Location: index.php');
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_wishlist'])) {
+        // Add to wishlist
+        $user = User::current();
+
+        if (!$user) {
+            header('Location: login.php');
+        }
+
+        $userId = $user->id;
+        $destinationId = $_POST['destination_id'];
+
+        if (!Wishlist::entryExists($userId, $destinationId)) {
+            Wishlist::add($userId, $destinationId);
+            $messageForUser = 'Successfully added this destination to your wishlist!';
+            $isInWishlist = true;
+        }
+    }
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['remove_from_wishlist'])) {
+        // Remove from wishlist
+        $user = User::current();
+
+        if (!$user) {
+            header('Location: login.php');
+        }
+
+        $userId = $user->id;
+        $destinationId = $_POST['destination_id'];
+
+        if (Wishlist::entryExists($userId, $destinationId)) {
+            Wishlist::remove($userId, $destinationId);
+            $messageForUser = 'Successfully removed this destination from your wishlist!';
+            $isInWishlist = false;
+        }
+    }
+
+    include 'partials/header.php';
+?>
+
+<div class="wrapper">
+    <section id="destination-page">
+        <div><?= $messageForUser; ?></div>
+        <div class="destination-info">
+            <h1><?= $destination->title; ?></h1>
+            <p><?= $destination->description; ?></p>
+            <img src="<?= $destination->img_path; ?>" alt="<?= $destination->title; ?>">
+            <div class="destination-price">Price&nbsp;(per person)&nbsp;: $<span id="pricePerPerson"><?= $destination->price; ?></span> </div>
+        </div>
+        <div class="form_holder">
+            <form action="summary.php" method="post">
+                <div class="cf">
+                    <div id="destination_details">
+                        <input type="hidden" name="destination_id" value="<?= $destination->id; ?>" />
+                        <input type="hidden" id="formTotalPrice" name="total_price" value="100">
+                        <input id="quantity" type="number" name="quantity" placeholder="Number of persons" min="1" max="20" value="1" required>
+                        <p>Total price: $<span id="totalPrice"></span> </p>
+                        <div class="reserve_holder">
+                            <input type="submit" name="summary_details" value="Reserve">
                         </div>
-                    </form>
-                        
-            </div><!-- end bottom bar -->
-                 
-</section><!-- end choose_bar -->      
-    		
+                    </div><!-- end destination_details -->
+                </div><!-- end middle bar -->
+            </form>
+        </div><!-- end form_holder -->
+
+        <div id="bottom_bar" class="cf">
+            <?php if ($isInWishlist) : ?>
+                <p>This destination is in your <a href="my_wishlist.php">wishlist</a>.</p>
+                <form action="" method="post">
+                    <div class="wishlist wrapper">
+                        <input type="hidden" name="destination_id" value="<?= $destination->id; ?>" />
+                        <input type="submit" name="remove_from_wishlist" value="Remove from My Wishlist">
+                    </div>
+                </form>
+            <?php else: ?>
+                <form action="" method="post">
+                    <div class="wishlist wrapper">
+                        <input type="hidden" name="destination_id" value="<?= $destination->id; ?>" />
+                        <input type="submit" name="add_to_wishlist" value="Add to My Wishlist">
+                    </div>
+                </form>
+            <?php endif; ?>
+
+        </div><!-- end bottom bar -->
+
+    </section><!-- end choose_bar -->
+</div>
 <?php
     include "partials/footer.php";
-?> 
+?>

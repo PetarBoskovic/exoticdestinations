@@ -1,54 +1,59 @@
 <?php
-    include "partials/header.php";
-?> 
-        
-<section id="choose_bar" class="wrapper">
+    session_start();
 
-        		
-    <div id="top_bar"  class="cf">
-                
-                 <div class="choose">
-                       <p>Reservation details</p>
-                 </div>
-                        
-                 <div class="login">
-                       <a href="login.php">Login</a>
-                       <a href="register.php">Register</a>
-                 </div>
-                
-     </div><!-- end top bar -->
+    include 'classes/DB.php';
+    include 'classes/Reservation.php';
+    include 'classes/User.php';
+    include 'classes/Destination.php';
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['summary_details'])) {
         
-     <div class="form_holder">
+        $destination_id = $_POST['destination_id'];
+        $user = User::current();     
         
-        <form action="booked.php" method="post">
-        
-            <div id="middle_bar"  class="cf">
-            
-                <div id="destination_details">
-                	
-                    <label>Customer name:&nbsp;:&nbsp; Petar Boskovic</label>
-					<label>Destination&nbsp;:&nbsp; Gozo, Malta</label>
-                    <img src="images/gozo_malta.jpg" alt="gozo_malta">
-                    <label>Number of passengers&nbsp;: 7 </label>
-                	<label>Total price&nbsp;: $200 </label>
-                
-                
-                
-                     <div class="reserve_holder">
-                          <input type="submit" name="summary_details" value="Confirm">
-                     </div>
-                 
-               </div><!-- end destination_details --> 
-               
-           </div><!-- end middle bar -->
-           
-     </form>
-   
-  	</div><!-- end form_holder -->  
-                          
-                 
-</section><!-- end choose_bar -->      
-    		
+        if (!$user){
+            header('Location: login.php');
+        }
+
+        $destination = Destination::getById($destination_id);
+        $total_price = $_POST['total_price'];
+        $quantity = $_POST['quantity'];
+    } else {
+        header('Location: index.php');
+    }
+    
+    include 'partials/header.php';
+?>
+
+<div class="wrapper">
+    <section id="destinations-page">
+        <div id="top_bar" class="cf">
+            <div class="choose">
+                <p>Reservation Details</p>
+            </div>
+        </div><!-- end top bar -->
+        <div class="destination-info">
+            <h1><?= $destination->title; ?></h1>
+            <p><?= $destination->description; ?></p>
+            <img src="<?= $destination->img_path; ?>" alt="<?= $destination->title; ?>">
+            <div class="destination-price">Total persons: <?= $quantity; ?></div>
+            <div class="destination-price">Price (per person): $<?= $destination->price; ?></div>
+            <div class="destination-price">Total Price: $<?= $total_price; ?></div>
+            <form action="booked.php" method="post">
+                <div class="cf">
+                    <div id="destination_details">
+                        <input type="hidden" name="destination_id" value="<?= $destination->id; ?>" />
+                        <input type="hidden" name="total_price" value="<?= $total_price; ?>">
+                        <input type="hidden" name="quantity" value="<?= $quantity; ?>">
+                        <div class="reserve_holder">
+                            <input type="submit" name="confirm" value="Confirm">
+                        </div>
+                    </div><!-- end destination_details -->
+                </div><!-- end middle bar -->
+            </form>
+        </div>
+    </section><!-- end choose_bar -->
+</div><!-- end wrapper -->
 <?php
-    include "partials/footer.php";
-?> 
+    include 'partials/footer.php';
+?>

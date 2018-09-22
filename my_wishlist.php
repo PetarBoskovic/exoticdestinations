@@ -1,45 +1,46 @@
 <?php
-    include "partials/header.php";
-?> 
-        
-<section id="choose_bar" class="wrapper">
+    session_start();
+    include "classes/DB.php";
+    include "classes/Wishlist.php";
+    include "classes/User.php";
+    include "classes/Destination.php";
 
-        		
-    <div id="top_bar"  class="cf">
-                
-                 <div id="center_wishlist" class="choose">
-                       <p>My Wishlist<i class="far fa-heart"></i></p>
-                 </div>
-                
-     </div><!-- end top bar -->
-        
-     <div class="form_holder">
-        
-        <form action="#" method="get">
-        
-            <div id="middle_bar"  class="cf">
-            
-                <div id="wishlist_details">
-                	
-					<label>Destination&nbsp;:&nbsp; Gozo, Malta</label>
-                    <img src="images/gozo_malta.jpg" alt="gozo_malta">
-                         
-                         <div>
-                         
-                            
-                         
-                         </div>
-                         
-               </div><!-- end wishlist_details --> 
-               
-           </div><!-- end middle bar -->
-           
-     	</form>
-   
-  	</div><!-- end form_holder -->  
-                 
-</section><!-- end choose_bar -->      
-    		
+    $user = User::current();
+    $destinations = Wishlist::getDestinationsByUserId($user->id);
+
+    include "partials/header.php";
+?>
+
+<section class="wrapper">
+
+
+    <div id="top_bar" class="cf">
+
+        <div id="center_wishlist" class="choose">
+            <p>My Wishlist<i class="far fa-heart"></i></p>
+        </div>
+
+    </div><!-- end top bar -->
+
+    <div id="destinations-list">
+    <div class="flex-container destinations-list">
+        <?php if (count($destinations)) : ?>
+            <?php foreach($destinations as $destination) : ?>
+            <a href="destination.php?id=<?= $destination->id; ?>" class="destination-item">
+                <div class="destination-title">
+                    <?php echo $destination->title; ?>
+                </div>
+                <img class="destination-image" src="<?php echo $destination->img_path; ?>" />
+            </a>
+            <?php endforeach; ?>
+            <?php else : ?>
+            <p>Your wishlist is empty :(</p>
+            <?php endif; ?>
+        </div>
+    </div>
+
+</section><!-- end choose_bar -->
+
 <?php
     include "partials/footer.php";
-?> 
+?>

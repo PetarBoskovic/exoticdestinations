@@ -8,10 +8,16 @@ class User {
 
     static $dbname = 'users';
 
-    public function __construct($username, $password, $email = '') {
-        $this->username = $username;
-        $this->password = md5($password);
-        $this->email = $email;
+    public function __construct($username = null, $password = null, $email = '') {
+        if ($username !== null) {
+            $this->username = $username;
+        }
+        if ($password !== null) {
+            $this->password = md5($password);
+        }
+        if ($email !== null) {
+            $this->email = md5($email);
+        }
     }
 
     public function isValid () {
@@ -71,7 +77,7 @@ class User {
         if ($user) {
             $this->id = $user['id'];
             $this->email = $user['email'];
-            $_SESSION['user_id'] = $user->id;
+            $_SESSION['user_id'] = $this->id;
             return $this;
         }
 
@@ -84,10 +90,10 @@ class User {
 
         $stmt = $connection->prepare("SELECT * FROM " . static::$dbname . " WHERE id=:id");
         $stmt->bindParam(':id', $userId);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
         $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_CLASS, 'User');
+        $user = $stmt->fetch();
 
         return $user;
     }
 }
-

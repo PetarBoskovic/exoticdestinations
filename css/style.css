@@ -2,596 +2,662 @@
 /* CSS Document */
 
 body {
-	margin: 0;
-	padding: 0;
-	font-family: 'Noto Sans', sans-serif;
-	font-size: 18px;
-	background: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    background: #fff;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 a:link,
 a:visited {
-	text-decoration: none;
-	color: #fff;
+    text-decoration: none;
 }
 
 img {
-	vertical-align: bottom;
-	max-width: 100%;
+    vertical-align: bottom;
+    max-width: 100%;
 }
-
 
 .wrapper {
-	margin: 0 auto;
-	width: 1600px;
-	position: relative;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
 }
-	
+
 .cf:after {
-	content: "";
-	display: table;
-	clear: both;
+    content: '';
+    display: table;
+    clear: both;
 }
 
 i {
-	margin-left: 5px;
+    margin-left: 5px;
 }
 
-
 p {
-	padding: 0;
-	margin: 6px 0;
+    padding: 0;
+    margin: 6px 0;
 }
 
 span {
-	color: #fff;
-	font-size: 20px; 
-	margin: 0 5px;
+    font-size: 20px;
+    margin: 0 5px;
 }
 
-input, select, number {
-	outline: none;
-	border-style: none;
+input,
+select,
+number {
+    outline: none;
+    border-style: none;
 }
 
 button {
-	display: block;
-	width: 45%;
-	padding: 15px 12px;
-	background: #FFF800;
-	border-style: none;
-	border-radius: 8px;
-	text-align: center;
-	color: #0764F4;
-	cursor: pointer;
-	font-size: 22px;
-	text-transform: uppercase;
-	height: 140px;
-	transition: .1s all ease; 
+    display: block;
+    width: 45%;
+    padding: 15px 12px;
+    background: #fff800;
+    border-style: none;
+    border-radius: 8px;
+    text-align: center;
+    color: #0764f4;
+    cursor: pointer;
+    font-size: 22px;
+    text-transform: uppercase;
+    height: 140px;
+    transition: 0.1s all ease;
 }
 
 button:hover {
-	box-shadow: 1.5px 2px 2px #CFDC00;
+    box-shadow: 1.5px 2px 2px #cfdc00;
 }
 
 #header {
-	padding: 10px 0;
-	background: #0764F4;
+    padding: 10px 0;
+    background: #0764f4;
 }
 
 #logo {
-	float: left;
+    float: left;
 }
 
 #logo img {
-	height: 80px;
+    width: 400px;
+    margin: 20px;
 }
 
 #nav {
-	float: right;
-	padding: 0;
-	margin: 0;
+    float: right;
+    padding: 0;
+    margin: 0;
 }
 
 #nav ul {
-	list-style: none;
-	margin: 0; 
-	padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #nav ul li {
-	float: left;
+    float: left;
 }
 
 #nav ul li a {
-	display: block;
-	padding: 0 15px;
-	font-size: 25px;
-	height: 80px;
-	line-height: 80px;
-	letter-spacing: 2px;
+    display: block;
+    padding: 0 15px;
+    font-size: 25px;
+    height: 80px;
+    line-height: 80px;
+    letter-spacing: 2px;
+    color: #fff;
 }
 
 #nav ul li a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
-
-#choose_bar {
-	width: 50%;
-	background: #0764F4;
-	border-radius: 5px;
-	padding: 20px;
-	margin-top: 50px;
-	margin-bottom: 50px;
+#destinations-page,
+#destination-page {
+    width: 80%;
+    background: #f2f2f2;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 50px auto;
 }
 
-
+.destination-info .destination-price {
+    padding: 8px 0;
+}
 
 #top_bar .choose {
-	float: left;
+    float: left;
 }
 
 #top_bar .choose p {
-	color: #fff;
-	font-size: 25px;
-	height: 45px;
-	line-height: 45px;
+    color: #333;
+    font-size: 25px;
+    height: 45px;
+    line-height: 45px;
 }
 
-
 #top_bar .login {
-	float: right;
+    float: right;
 }
 
 #top_bar .login a {
-	display: block;
-	height: 45px;
-	line-height: 45px;
-	float: left;
-	margin: 10px 5px;
-	font-size: 25px;
-	padding: 0;
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    margin: 10px 5px;
+    font-size: 25px;
+    color: #fff;
+    border-radius: 24px;
+    padding: 0px 18px;
+    background: #0764f4;
 }
 
 #top_bar .login a:hover {
-	text-decoration: underline;
+    text-decoration: none;
+    background: #cfdc00;
 }
 
 #middle_bar {
-	padding: 0 90px;
+    padding: 0 90px;
+}
+
+.flex-container {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.greedy-child {
+    flex-grow: 9;
+}
+
+.humble-child {
+    flex-grow: 1;
+}
+
+.destination-item {
+    display: block;
+    width: 50%;
+    padding: 8px;
+    color: #333;
+}
+
+.form-holder {
+    margin-bottom: 80px;
+    font-size: 0;
+}
+
+.form-holder .search-input {
+    display: inline-block;
+    padding: 8px 16px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+    border-radius: 24px;
+    margin: 0;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.form-holder .input-button-holder {
+    padding-left: 16px;
+}
+
+.form-holder .input-button-holder .search-button {
+    display: inline-block;
+    padding: 8px 16px;
+    height: 48px;
+    line-height: 34px;
+    font-size: 16px;
+    border-radius: 24px;
+    margin: 0;
+    vertical-align: middle;
+    background: #cfdc00;
+    width: 100%;
+}
+
+.form-holder .search-button:hover {
+    background: #0764f4;
+    cursor: pointer;
+    color: #fff;
+}
+
+.destination-item {
+    text-align: center;
+}
+
+.destination-item .destination-title {
+    display: block;
+    font-size: 28px;
+    padding: 8px;
+}
+
+.destination-item .destination-image {
+    display: block;
+    border-radius: 20px;
 }
 
 .destination_holder select {
-	padding: 10px 0;
-	border-radius: 8px;
-	margin: 10px 0;
-	width: 100%;
-	font-size: 20px;
+    padding: 10px 0;
+    border-radius: 8px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 20px;
 }
 .destination_holder option {
-	background: #fff;
-	color: #4D4B4B;
+    background: #fff;
+    color: #4d4b4b;
 }
 
 #date_holder {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 #date_holder .date_holder_left {
-	float: left;
-	width: 45%;
+    float: left;
+    width: 45%;
 }
 
 #date_holder .date_holder_right {
-	float: right;
-	width: 45%;
-} 
-
-#date_holder .date_holder_left input[type="text"] {
-	padding: 10px 0;
-	border-radius: 5px;
-	width: 100%;
-	border-style: none;
-	font-size: 14px;
-	text-align: center;
-	font-weight: 600;
-	cursor: pointer;
-	
+    float: right;
+    width: 45%;
 }
 
-#date_holder .date_holder_right input[type="text"] {
-	padding: 10px 0;
-	border-radius: 5px;
-	width: 100%;
-	border-style: none;
-	font-size: 14px;
-	text-align: center;
-	font-weight: 600;
-	cursor: pointer;
+#date_holder .date_holder_left input[type='text'] {
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    border-style: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-
-
+#date_holder .date_holder_right input[type='text'] {
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    border-style: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
 
 #bottom_bar {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
-#bottom_bar  .continue_holder {
-	width: 40%;
+#bottom_bar .continue_holder {
+    width: 40%;
 }
 
-#bottom_bar .continue_holder input[type="submit"] {
-	padding: 10px 0;
-	border-radius: 5px;
-	width: 100%;
-	border-style: none;
-	font-size: 14px;
-	background: #FFF800;
-	color: #0764F4;
-	cursor: pointer;
-	font-weight: 600;
-	transition: 0.2s ease;
+#bottom_bar .continue_holder input[type='submit'] {
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    border-style: none;
+    font-size: 14px;
+    background: #fff800;
+    color: #0764f4;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
 }
 
-#bottom_bar .continue_holder input[type="submit"]:hover {
-	transform: scaleY(1.1);
+#bottom_bar .continue_holder input[type='submit']:hover {
+    transform: scaleY(1.1);
 }
 
 .wishlist {
-	width: 30%;
-	margin-top: 10px;
+    width: 30%;
+    margin-top: 10px;
 }
 
-.wishlist input[type="submit"] {
-	padding: 10px 0;
-	width: 100%;
-	border-radius: 5px;
-	border-style: none;
-	font-size: 14px;
-	background: #FFF800;
-	color: #0764F4;
-	cursor: pointer;
-	font-weight: 600;
-	transition: 0.2s ease;
+.wishlist input[type='submit'] {
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 14px;
+    background: #fff800;
+    color: #0764f4;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
 }
 
-.wishlist input[type="submit"]:hover {
-	transform: scaleY(1.1);
+.wishlist input[type='submit']:hover {
+    transform: scaleY(1.1);
 }
 
 /*LOGIN CSS*/
 
-
 #login_container {
-	width: 60%;
-	margin: 0 auto;
+    width: 60%;
+    margin: 0 auto;
 }
 
-#login_container .login_top  {
-	text-align: center;
-	font-size: 26px;
-	color: #fff;
-	background: rgba(0,0,0,0.35);
-	letter-spacing: 1px;
-	border-radius: 8px;
-	box-shadow: 1.5px 3px 8px rgba(0,0,0,0.45);
-	margin-bottom: 20px;
+#login_container .login_top {
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    letter-spacing: 1px;
+    border-radius: 8px;
+    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
+    margin-bottom: 20px;
 }
-
 
 #login_container .login_form label {
-	color: #fff;
-	font-size: 22px;
+    color: #fff;
+    font-size: 22px;
 }
 
-#login_container .login_form input[type="text"], input[type="password"] {
-	padding: 10px 0;
-	border-radius: 5px;
-	width: 100%;
-	border-style: none;
-	font-size: 14px;
-	background: #fff;
-	color: #000;
-	margin: 10px 0;
+#login_container .login_form input[type='text'],
+input[type='password'] {
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    border-style: none;
+    font-size: 14px;
+    background: #fff;
+    color: #000;
+    margin: 10px 0;
 }
 
-#login_container .login_form input[type="submit"] {
-	padding: 10px 0;
-	border-radius: 5px;
-	width: 100%;
-	border-style: none;
-	font-size: 14px;
-	background: #FFF800;
-	color: #0764F4;
-	margin: 10px 0;
-	cursor: pointer;
-	text-transform: uppercase;
-	transition: 0.2s ease;
+#login_container .login_form input[type='submit'] {
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    border-style: none;
+    font-size: 14px;
+    background: #fff800;
+    color: #0764f4;
+    margin: 10px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s ease;
 }
 
-
-
-#login_container .login_form  input[type="submit"]:hover {
-	transform: scaleY(1.1);	
+#login_container .login_form input[type='submit']:hover {
+    transform: scaleY(1.1);
 }
 
 .no_account a {
-	color: #18FFFB;
-	font-size: 16px;
+    color: #18fffb;
+    font-size: 16px;
 }
 .no_account a span {
-	font-size: 18px;
-	color: #18FFFB;
+    font-size: 18px;
+    color: #18fffb;
 }
 .no_account a span:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 /*REGISTER CSS*/
 
-
 #register_container {
-	width: 60%;
-	margin: 0 auto;
+    width: 60%;
+    margin: 0 auto;
 }
 
-#register_container .register_top  {
-	text-align: center;
-	font-size: 26px;
-	color: #fff;
-	background: rgba(0,0,0,0.35);
-	letter-spacing: 1px;
-	border-radius: 8px;
-	box-shadow: 1.5px 3px 8px rgba(0,0,0,0.45);
-	margin-bottom: 20px;
+#register_container .register_top {
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    letter-spacing: 1px;
+    border-radius: 8px;
+    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
+    margin-bottom: 20px;
 }
-
 
 #register_container .register_form label {
-	color: #fff;
-	font-size: 22px;
+    color: #fff;
+    font-size: 22px;
 }
 
-#register_container .register_form input[type="text"], input[type="password"] {
-	padding: 10px 0;
-	border-radius: 5px;
-	width: 100%;
-	border-style: none;
-	font-size: 14px;
-	background: #fff;
-	color: #000;
-	margin: 10px 0;
+#register_container .register_form input[type='text'],
+input[type='password'] {
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    border-style: none;
+    font-size: 14px;
+    background: #fff;
+    color: #000;
+    margin: 10px 0;
 }
 
-#register_container .register_form input[type="submit"] {
-	padding: 10px 0;
-	border-radius: 5px;
-	width: 100%;
-	border-style: none;
-	font-size: 14px;
-	background: #FFF800;
-	color: #0764F4;
-	margin: 10px 0;
-	cursor: pointer;
-	text-transform: uppercase;
-	transition: 0.2s ease;
+#register_container .register_form input[type='submit'] {
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    border-style: none;
+    font-size: 14px;
+    background: #fff800;
+    color: #0764f4;
+    margin: 10px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s ease;
 }
 
-
-#register_container .register_form  input[type="submit"]:hover {
-	transform: scaleY(1.1);	
+#register_container .register_form input[type='submit']:hover {
+    transform: scaleY(1.1);
 }
-
 
 .yes_account a {
-	color: #18FFFB;
-	font-size: 16px;
+    color: #18fffb;
+    font-size: 16px;
 }
 .yes_account a span {
-	font-size: 18px;
-	color: #18FFFB;
+    font-size: 18px;
+    color: #18fffb;
 }
 .yes_account a span:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
-
 
 /* DESTINATION CSS */
 
 #destination_details label {
-	color: #fff;
-	font-size: 26px;
-	margin: 20px 0;
-	display: block;
+    font-size: 26px;
+    margin: 20px 0;
+    display: block;
 }
 #destination_details label span {
-	font-size: 18px;
+    font-size: 18px;
 }
 
 #destination_details img {
-	width: 100%;
-	border-radius: 8px;
+    width: 100%;
+    border-radius: 8px;
 }
 
-#destination_details input[type="number"] {
-	display: block;
-	padding: 12px 12px;
-	width: 30%;
-	text-align: center;
-	font-size: 14px;
-	border-radius: 8px;
-	border-style: none;
+#destination_details input[type='number'] {
+    display: block;
+    padding: 12px 12px;
+    width: 30%;
+    font-size: 14px;
+    border-radius: 8px;
+    border-style: none;
+    border: 1px solid #ccc;
 }
 
 #destination_details .reserve_holder {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
-#destination_details .reserve_holder  input[type="submit"]{
-	width: 100%;
-	padding: 10px 0;
-	border-radius: 5px;
-	border-style: none;
-	font-size: 14px;
-	background: #FFF800;
-	color: #0764F4;
-	cursor: pointer;
-	font-weight: 600;
-	transition: 0.2s ease;
+#destination_details .reserve_holder input[type='submit'] {
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 14px;
+    background: #fff800;
+    color: #0764f4;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
 }
 
-#destination_details .reserve_holder input[type="submit"]:hover {
-	transform: scaleY(1.1);
+#destination_details .reserve_holder input[type='submit']:hover {
+    transform: scaleY(1.1);
 }
 
 /* MY WISHLIST CSS*/
 
-
 #top_bar #center_wishlist {
-	float: none;
-	text-align: center;
-	margin: 10px 0;
+    float: none;
+    text-align: center;
+    margin: 10px 0;
 }
 
 #top_bar #center_wishlist p {
-	font-size: 32px;
+    font-size: 32px;
 }
 
-#wishlist_details label {
-	color: #fff;
-	font-size: 26px;
-	margin: 20px 0;
-	display: block;
+#wishlist_details p {
+    color: #000;
+    font-size: 26px;
+    margin: 20px 0;
+    display: block;
 }
 
 #wishlist_details img {
-	width: 100%;
-	border-radius: 8px;
-	margin-bottom: 50px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 50px;
 }
 
 /* ACCOUNT CSS */
 
-
 #login_account_container {
-	width: 60%;
-	margin: 0 auto;
+    width: 60%;
+    margin: 0 auto;
 }
 
-#login_account_container .login_account_top  {
-	text-align: center;
-	font-size: 26px;
-	color: #fff;
-	background: rgba(0,0,0,0.35);
-	letter-spacing: 1px;
-	border-radius: 8px;
-	box-shadow: 1.5px 3px 8px rgba(0,0,0,0.45);
-	margin-bottom: 20px;
+#login_account_container .login_account_top {
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    letter-spacing: 1px;
+    border-radius: 8px;
+    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
+    margin-bottom: 20px;
 }
 
 #button_holder .left {
-	float: left;
+    float: left;
 }
 #button_holder .right {
-	float: right;
+    float: right;
 }
 
 /* LOGIN SUCCESS CSS */
 
 #login_success_container {
-	width: 60%;
-	margin: 0 auto;
+    width: 60%;
+    margin: 0 auto;
 }
 
-#login_success_container .login_success_top  {
-	text-align: center;
-	font-size: 26px;
-	color: #fff;
-	background: rgba(0,0,0,0.35);
-	letter-spacing: 1px;
-	border-radius: 8px;
-	box-shadow: 1.5px 3px 8px rgba(0,0,0,0.45);
-	margin-bottom: 20px;
+#login_success_container .login_success_top {
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    letter-spacing: 1px;
+    border-radius: 8px;
+    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
+    margin-bottom: 20px;
 }
 
 /* REGISTER SUCCESS CSS */
 
 #register_success_container {
-	width: 60%;
-	margin: 0 auto;
+    width: 60%;
+    margin: 0 auto;
 }
 
 #register_success_container .register_success_top {
-	text-align: center;
-	font-size: 26px;
-	color: #fff;
-	background: rgba(0,0,0,0.35);
-	letter-spacing: 1px;
-	border-radius: 8px;
-	box-shadow: 1.5px 3px 8px rgba(0,0,0,0.45);
-	margin-bottom: 20px;
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    letter-spacing: 1px;
+    border-radius: 8px;
+    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
+    margin-bottom: 20px;
 }
 
 /* WISHLIST SUCCESS CSS */
 
 #wishlist_success_container {
-	width: 60%;
-	margin: 0 auto;
+    width: 60%;
+    margin: 0 auto;
 }
 
 #wishlist_success_container .wishlist_success_top {
-	text-align: center;
-	font-size: 26px;
-	color: #fff;
-	background: rgba(0,0,0,0.35);
-	letter-spacing: 1px;
-	border-radius: 8px;
-	box-shadow: 1.5px 3px 8px rgba(0,0,0,0.45);
-	margin-bottom: 20px;
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    letter-spacing: 1px;
+    border-radius: 8px;
+    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
+    margin-bottom: 20px;
 }
-#wishlist_success_container  #button_holder button {
-	float: none;
-	margin: 0 auto;
+#wishlist_success_container #button_holder button {
+    float: none;
+    margin: 0 auto;
 }
 
 /* SUMMARY CSS */
 /* the same as the destination css*/
 
-
 /* BOOKED CSS */
 
 #booked_container {
-	width: 60%;
-	margin: 0 auto;
+    width: 60%;
+    margin: 0 auto;
 }
 
-#booked_container  .booked_top  {
-	text-align: center;
-	font-size: 26px;
-	color: #fff;
-	background: rgba(0,0,0,0.35);
-	letter-spacing: 1px;
-	border-radius: 8px;
-	box-shadow: 1.5px 3px 8px rgba(0,0,0,0.45);
-	margin-bottom: 20px;
+#booked_container .booked_top {
+    text-align: center;
+    font-size: 26px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    letter-spacing: 1px;
+    border-radius: 8px;
+    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
+    margin-bottom: 20px;
 }
 
 #booked_container button {
-	float: none;
-	margin: 0 auto;
-	width: 100%;
-	height: 60px;
+    float: none;
+    margin: 0 auto;
+    width: 100%;
+    height: 60px;
 }
-
-
-
-
-
-
-
-
-
-
-
-

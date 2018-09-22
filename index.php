@@ -4,74 +4,55 @@
     include 'classes/Destination.php';
 
     $destinations = Destination::getAll();
-    // include 'classes/User.php';
 
-    // $user = User::current();
-
-    // TODO: Ako je poslat POST request uzeti 'destination_title'
-    // Uraditi pretragu sa Destinations::getAllByTitle($destination_title);
-    // getAllByTitle ima SQL query sa LIKE %:destination_title%
-    // getAllByTitle vraca niz destinacija
-    // ako nema rezultata napisi error poruku
-    // ako ima rezultata pregazi $destinations sa vracenim destinacijama
+    if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['destination_title'])) {
+        // Search destinations in db
+        $destinationTitle = $_GET['destination_title'];
+        $destinations = Destination::getByTitle($destinationTitle);
+    }
 
     include "partials/header.php";
-?> 
-        
-<section id="choose_bar" class="wrapper">
+?>
+<div class="wrapper">
+    <section id="destinations-page">
+        <div id="top_bar" class="cf">
+            <div class="choose">
+                <p>Search Offers</p>
+            </div>
+        </div><!-- end top bar -->
 
-        		
-    <div id="top_bar"  class="cf">
-                
-                 <div class="choose">
-                       <p>Offers</p>
-                 </div>
-                        
-                 <div class="login">
-                       <a href="login.php">Login</a>
-                       <a href="register.php">Register</a>
-                 </div>
-                
-     </div><!-- end top bar -->
-        
-     <div class="form_holder">
-        
-        <form action="destination.php" method="post">
-        
-            <div id="middle_bar" class="cf">
-            
-                <div class="destinations_holder">
-                    <input type="text" name="destination_title" placeholder="Enter destination name" />
-                    <div>
-                        <?php if (count($destinations)) : ?>
-                            <?php foreach($destinations as $destination) : ?>
-                                Naslov: <?php echo $destination->title; ?>
-                                <img src="<?php echo $destination->img_path; ?>" />
-                            <?php endforeach; ?>
-                        <?php else : ?>
-                        <p>Trenutno nemamo destinacija</p>
-                        <?php endif; ?>
+        <div class="form-holder">
+            <form action="" method="get">
+                <div class="flex-container">
+                    <div class="greedy-child">
+                        <input type="text" name="destination_title" placeholder="Enter destination name" class="search-input" value="<?php echo (isset($destinationTitle)) ? $destinationTitle : ''; ?>"/>
                     </div>
-               </div>
-                
-           </div><!-- end middle bar -->
-                        
-           <div id="bottom_bar" class="cf">
-                 
-                        <div class="continue_holder wrapper">
-                            <input type="submit" name="reservation_details" value="Continue">
+                    <div class="humble-child">
+                        <div class="input-button-holder">
+                            <input type="submit" name="reservation_details" value="Search" class="search-button">
                         </div>
-                        
-            </div><!-- end bottom bar -->
-                    
-     </form>
-   
-  </div><!-- end form_holder -->  
+                    </div>
+                </div>
+            </form>
+        </div><!-- end form_holder -->
+        <div class="flex-container destinations-list">
+            <?php if (count($destinations)) : ?>
+            <?php foreach($destinations as $destination) : ?>
+            <a href="destination.php?id=<?= $destination->id; ?>" class="destination-item">
+                <div class="destination-title">
+                    <?php echo $destination->title; ?>
+                </div>
+                <img class="destination-image" src="<?php echo $destination->img_path; ?>" />
+            </a>
+            <?php endforeach; ?>
+            <?php else : ?>
+            <p>Sorry, no destinations, yet.</p>
+            <?php endif; ?>
+        </div>
+    </section><!-- end choose_bar -->
 
-                 
-</section><!-- end choose_bar -->      
-    		
-  
+</div>
+
 <?php
     include "partials/footer.php";
-?> 
+?>

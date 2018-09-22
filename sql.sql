@@ -57,3 +57,8 @@ CREATE TABLE `exotic`.`destinations` (
 ALTER TABLE `exotic`.`destinations` 
 CHANGE COLUMN `date_from` `date_from` DATETIME NOT NULL ,
 CHANGE COLUMN `date_to` `date_to` DATE NOT NULL ;
+
+
+ALTER TABLE `exotic`.`reservations` 
+ADD COLUMN `quantity` INT(11) NULL AFTER `destination_id`,
+ADD COLUMN `total_price` VARCHAR(45) NULL AFTER `quantity`;
