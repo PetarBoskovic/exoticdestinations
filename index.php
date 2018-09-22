@@ -42,7 +42,7 @@
                 <div class="destination-title">
                     <?php echo $destination->title; ?>
                 </div>
-                <img class="destination-image" src="<?php echo $destination->img_path; ?>" />
+                <div class="destination-image-holder" style="background-image: url('<?php echo $destination->img_path; ?>');"></div>
             </a>
             <?php endforeach; ?>
             <?php else : ?>
