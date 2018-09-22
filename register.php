@@ -25,18 +25,18 @@
     include 'partials/header.php';
 ?>
         
-<section id="choose_bar" class="wrapper">
+<div class="wrapper">
     <div id="register_container">
         <div class="register_top">
             <p>Create your account</p>
         </div>
         <div class="register_form">
             <form action="" method="post">
-                <label>Username</label><br>
+                <p>Username</p>
                 <input type="text" name="username" autocomplete="off" placeholder="&nbsp;Username" required>
-                <label>E-mail</label><br>
+                <p>E-mail</p>
                 <input type="text" name="email" autocomplete="on" placeholder="&nbsp;E-mail" required>
-                <label>Password</label><br>
+                <p>Password</p>
                 <input type="password" name="password" placeholder="&nbsp;Password" required>
                 <input type="submit" name="login" value="create account">
                 <div class="yes_account">
@@ -50,7 +50,7 @@
             <?php endif; ?>
         </div><!-- end register_form --> 
     </div><!-- end register_container -->  
-</section><!-- end choose_bar -->      
+</div><!-- end wrapper -->      
 
 <?php
     include "partials/footer.php";

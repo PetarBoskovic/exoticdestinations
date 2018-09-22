@@ -36,6 +36,7 @@ img {
     margin: 0 auto;
     width: 100%;
     position: relative;
+    padding: 0 25px;
 }
 
 .cf:after {
@@ -362,8 +363,11 @@ button:hover {
 /*LOGIN CSS*/
 
 #login_container {
-    width: 60%;
-    margin: 0 auto;
+    width: 40%;
+    margin: 25px auto;
+    background: #fff;
+    padding: 0 20px;
+    border-radius: 5px;
 }
 
 #login_container .login_top {
@@ -377,7 +381,7 @@ button:hover {
     margin-bottom: 20px;
 }
 
-#login_container .login_form label {
+#login_container .login_form p {
     color: #fff;
     font-size: 22px;
 }
@@ -392,6 +396,7 @@ input[type='password'] {
     background: #fff;
     color: #000;
     margin: 10px 0;
+    border: 1px solid #ccc;
 }
 
 #login_container .login_form input[type='submit'] {
@@ -413,12 +418,12 @@ input[type='password'] {
 }
 
 .no_account a {
-    color: #18fffb;
+    color: #333;
     font-size: 16px;
 }
 .no_account a span {
-    font-size: 18px;
-    color: #18fffb;
+    color: #000;
+    font-size: 16px;
 }
 .no_account a span:hover {
     text-decoration: underline;
@@ -427,8 +432,11 @@ input[type='password'] {
 /*REGISTER CSS*/
 
 #register_container {
-    width: 60%;
-    margin: 0 auto;
+    width: 40%;
+    margin: 25px auto;
+    background: #fff;
+    padding: 0 20px;
+    border-radius: 5px;
 }
 
 #register_container .register_top {
@@ -437,13 +445,12 @@ input[type='password'] {
     color: #fff;
     background: rgba(0, 0, 0, 0.35);
     letter-spacing: 1px;
-    border-radius: 8px;
+    border-radius: 5px;
     box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
-    margin-bottom: 20px;
 }
 
-#register_container .register_form label {
-    color: #fff;
+#register_container .register_form p {
+    color: #000;
     font-size: 22px;
 }
 
@@ -457,6 +464,7 @@ input[type='password'] {
     background: #fff;
     color: #000;
     margin: 10px 0;
+    border: 1px #ccc solid;
 }
 
 #register_container .register_form input[type='submit'] {
@@ -478,12 +486,12 @@ input[type='password'] {
 }
 
 .yes_account a {
-    color: #18fffb;
+    color: #333;
     font-size: 16px;
 }
 .yes_account a span {
     font-size: 18px;
-    color: #18fffb;
+    color: #000;
 }
 .yes_account a span:hover {
     text-decoration: underline;
@@ -559,89 +567,6 @@ input[type='password'] {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 50px;
-}
-
-/* ACCOUNT CSS */
-
-#login_account_container {
-    width: 60%;
-    margin: 0 auto;
-}
-
-#login_account_container .login_account_top {
-    text-align: center;
-    font-size: 26px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.35);
-    letter-spacing: 1px;
-    border-radius: 8px;
-    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
-    margin-bottom: 20px;
-}
-
-#button_holder .left {
-    float: left;
-}
-#button_holder .right {
-    float: right;
-}
-
-/* LOGIN SUCCESS CSS */
-
-#login_success_container {
-    width: 60%;
-    margin: 0 auto;
-}
-
-#login_success_container .login_success_top {
-    text-align: center;
-    font-size: 26px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.35);
-    letter-spacing: 1px;
-    border-radius: 8px;
-    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
-    margin-bottom: 20px;
-}
-
-/* REGISTER SUCCESS CSS */
-
-#register_success_container {
-    width: 60%;
-    margin: 0 auto;
-}
-
-#register_success_container .register_success_top {
-    text-align: center;
-    font-size: 26px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.35);
-    letter-spacing: 1px;
-    border-radius: 8px;
-    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
-    margin-bottom: 20px;
-}
-
-/* WISHLIST SUCCESS CSS */
-
-#wishlist_success_container {
-    width: 60%;
-    margin: 0 auto;
-}
-
-#wishlist_success_container .wishlist_success_top {
-    text-align: center;
-    font-size: 26px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.35);
-    letter-spacing: 1px;
-    border-radius: 8px;
-    box-shadow: 1.5px 3px 8px rgba(0, 0, 0, 0.45);
-    margin-bottom: 20px;
-}
-#wishlist_success_container #button_holder button {
-    float: none;
-    margin: 0 auto;
 }
 
 /* SUMMARY CSS */

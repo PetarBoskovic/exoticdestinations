@@ -33,7 +33,6 @@
                 <ul>
 
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="contact_us.php">Contact Us</a></li>
                     <li><a href="my_wishlist.php">My Wishlist<i class="far fa-heart"></i></a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="register.php">Register</a></li>
