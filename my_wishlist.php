@@ -11,26 +11,21 @@
     include "partials/header.php";
 ?>
 
-<section class="wrapper">
-
-
-    <div id="top_bar" class="cf">
-
-        <div id="center_wishlist" class="choose">
+<section id="wishlist-wrapper">
+    <div class="top_bar" class="cf">
+        <div id="center-wishlist" class="choose">
             <p>My Wishlist<i class="far fa-heart"></i></p>
         </div>
-
-    </div><!-- end top bar -->
-
+    </div>
     <div id="destinations-list">
     <div class="flex-container destinations-list">
         <?php if (count($destinations)) : ?>
             <?php foreach($destinations as $destination) : ?>
             <a href="destination.php?id=<?= $destination->id; ?>" class="destination-item">
                 <div class="destination-title">
-                    <?php echo $destination->title; ?>
+                   <h1><?php echo $destination->title; ?></h1>
                 </div>
-                <img class="destination-image" src="<?php echo $destination->img_path; ?>" />
+                <div class="destination-image-holder" style="background-image: url('<?php echo $destination->img_path; ?>');"></div>
             </a>
             <?php endforeach; ?>
             <?php else : ?>
@@ -38,8 +33,7 @@
             <?php endif; ?>
         </div>
     </div>
-
-</section><!-- end choose_bar -->
+</section>
 
 <?php
     include "partials/footer.php";

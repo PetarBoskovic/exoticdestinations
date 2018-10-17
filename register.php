@@ -25,12 +25,12 @@
     include 'partials/header.php';
 ?>
         
-<div class="wrapper">
+<div class="register-wrapper">
     <div id="register_container">
-        <div class="register_top">
+        <div class="register-top">
             <p>Create your account</p>
         </div>
-        <div class="register_form">
+        <div class="register-form">
             <form action="" method="post">
                 <p>Username</p>
                 <input type="text" name="username" autocomplete="off" placeholder="&nbsp;Username" required>
@@ -39,7 +39,7 @@
                 <p>Password</p>
                 <input type="password" name="password" placeholder="&nbsp;Password" required>
                 <input type="submit" name="login" value="create account">
-                <div class="yes_account">
+                <div class="yes-account">
                     <a href="login.php">I already have an account.<span>Log In!</span></a>
                 </div>
             </form>

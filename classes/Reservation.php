@@ -2,7 +2,6 @@
 
 class Reservation {
     public $user_id;
-    // Destination Object
     public $destination = null;
     public $quantity;
     public $total_price;
@@ -16,12 +15,11 @@ class Reservation {
         $this->total_price = $total_price;
     }
 
-    public function make() {
+    public function make() { 
         $connection = DB::getConnection();
 
         $stmt = $connection->prepare("INSERT INTO " . static::$dbname . " (`user_id`, `destination_id`, `quantity`, `total_price`) VALUES (:user_id, :destination_id, :quantity, :total_price)");
         $stmt->bindParam(':user_id', $this->user_id);
-        // Get destination id property from Destination object
         $stmt->bindParam(':destination_id', $this->destination->id);
         $stmt->bindParam(':quantity', $this->quantity);
         $stmt->bindParam(':total_price', $this->total_price);

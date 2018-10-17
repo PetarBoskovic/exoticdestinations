@@ -23,21 +23,19 @@
     include "partials/header.php";
 ?>
 
-<div class="wrapper">
+<div class="login-wrapper">
     <div id="login_container">
-        <div class="login_top">
+        <div class="login-top">
             <p>Login to your account</p>
         </div>
-
-        <div class="login_form">
+        <div class="login-form">
             <form action="" method="post">
-                <label>Username</label>
+                <p>Username</p>
                 <input type="text" name="username" autocomplete="off" placeholder="&nbsp;Username" required>
-                <label>Password</label>
+                <p>Password</p>
                 <input type="password" name="password" placeholder="&nbsp;Password" required>
                 <input type="submit" name="login" value="login">
-
-                <div class="no_account">
+                <div class="no-account">
                     <a href="register.php">I do not have an account.<span>Create one!</span></a>
                 </div>
             </form>

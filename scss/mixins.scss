@@ -1,0 +1,155 @@
+// MIXINS
+
+@mixin clearFix{
+    &:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+}
+
+@mixin wrapper {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding: 0 25px;
+}
+
+@mixin main-wrapper {
+    margin: 50px auto;
+    width: 80%;
+    position: relative;
+    padding: 0 25px;
+}
+
+@mixin login-register-wrapper {
+    margin: 25px auto;
+    width: 40%;
+    position: relative;
+    padding: 0 25px;
+}
+
+
+@mixin flexContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@mixin searchInput {
+    display: inline-block;
+    padding: 8px 16px;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 24px;
+    margin: 0;
+    vertical-align: middle;
+    width: 100%;
+    outline: none;
+}
+
+@mixin searchButton {
+        display: inline-block;
+        padding: 8px 16px;
+        height: 48px;
+        line-height: 30px;
+        font-size: 16px;
+        border-radius: 24px;
+        margin: 0;
+        vertical-align: middle;
+        background: #cfdc00;
+        width: 100%;
+        outline: none;
+        transition: .3s all ease;
+        &:hover {
+            background: #0764f4;
+            cursor: pointer;
+            color: #fff;
+        }
+    }
+
+
+/* LOGIN style and REGISTER */
+@mixin inputPass {
+    padding: 10px 0;
+    border-radius: $bRadiusSmall;
+    width: 100%;
+    border-style: none;
+    font-size: 14px;
+    background: #fff;
+    color: #000;
+    outline: none;
+    cursor: pointer;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+@mixin Submit {
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100%;
+    border-style: none;
+    font-size: 14px;
+    background: #fff800;
+    color: #0764f4;
+    outline: none;
+    margin: 10px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .6s ease;
+    &:hover {
+        background: complement(#fff800);
+        color: #fff800;
+    }
+}
+
+/* DESTINATION and SUMMARY */
+
+@mixin destinationPage {
+    width: 80%;
+    background: #e8e8e8;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 50px auto;
+}
+@mixin destinationAndSummary 
+{
+    @include main-wrapper;
+        #destination-page {
+            @include destinationPage;
+            @include clearFix;
+        }
+        img {
+            width: 100%;
+            border-radius: $bRadiusSmall;
+        }
+        .destination-price {
+            padding: 8px 0;
+        }
+        #destination-details input[type='number'] {
+            display: block;
+            padding: 12px 12px;
+            width: 30%;
+            font-size: $p / 1.5;
+            border-radius: $bRadiusSmall;
+            border-style: none;
+            border: 1px solid #ccc;
+        }
+        .reserve-holder {
+            margin-top: 20px;
+            input[type='submit'] {
+                @include Submit;
+            }
+        }
+        #bottom-bar {
+            @include clearFix;
+        }
+        .wishlist {
+            @include main-wrapper;
+            width: 50%;
+            margin: 0 auto;
+        }
+        input[type='submit'] {
+            @include Submit;
+        }
+}

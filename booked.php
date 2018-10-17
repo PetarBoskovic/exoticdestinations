@@ -26,10 +26,11 @@
     
     include 'partials/header.php';
 ?> 
-<section id="choose_bar" class="wrapper">
+<section id="choose-bar">
     <div id="booked_container">
-        <div class="booked_top">
-            <p>Dear <?= $user->username; ?>, you succesfully booked your destination! Your reservation ID is <?php echo $reservationId; ?>.</p>
+        <div class="booked-top">
+            <p>Dear <?= $user->username; ?>, you succesfully booked your destination!
+            Your reservation ID is <?= $reservationId; ?>.</p>
         </div>
     </div>
 </section>

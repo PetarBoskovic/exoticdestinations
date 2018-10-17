@@ -62,3 +62,12 @@ CHANGE COLUMN `date_to` `date_to` DATE NOT NULL ;
 ALTER TABLE `exotic`.`reservations` 
 ADD COLUMN `quantity` INT(11) NULL AFTER `destination_id`,
 ADD COLUMN `total_price` VARCHAR(45) NULL AFTER `quantity`;
+
+ALTER TABLE `exotic` . `destinations`
+DROP COLUMN `date_from`;
+
+ALTER TABLE `exotic` . `destinations`
+DROP COLUMN `date_to`;
+
+INSERT INTO `exotic`.`destinations` (`title`, `description`, `price`, `img_path`) VALUES ('Tokio', 'Glavni grad Japana', '675', 'http://shootinglife.net/wp/wp-content/uploads/2016/04/raiNY-shiNY-e1463287590306.jpg');
+

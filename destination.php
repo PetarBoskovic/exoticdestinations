@@ -59,12 +59,12 @@
     include 'partials/header.php';
 ?>
 
-<div class="wrapper">
+<div class="destination-wrapper">
     <section id="destination-page">
         <?php if (!empty($messageForUser)) : ?>
             <div class="alert alert-success"><?= $messageForUser; ?></div>
         <?php endif; ?>
-        <div class="destination-info">
+        <div>
             <h1><?= $destination->title; ?></h1>
             <p><?= $destination->description; ?></p>
             <img src="<?= $destination->img_path; ?>" alt="<?= $destination->title; ?>">
@@ -74,39 +74,38 @@
         </div>
         <div class="form_holder">
             <form action="summary.php" method="post">
-                <div class="cf">
-                    <div id="destination_details">
+                <div>
+                    <div id="destination-details">
                         <input type="hidden" name="destination_id" value="<?= $destination->id; ?>" />
                         <input type="hidden" id="formTotalPrice" name="total_price" value="100">
                         <input id="quantity" type="number" name="quantity" placeholder="Number of persons" min="1" max="20" value="1" required>
                         <p>Total price: $<span id="totalPrice"></span> </p>
-                        <div class="reserve_holder">
+                        <div class="reserve-holder">
                             <input type="submit" name="summary_details" value="Reserve">
                         </div>
-                    </div><!-- end destination_details -->
-                </div><!-- end middle bar -->
+                    </div>
+                </div>
             </form>
-        </div><!-- end form_holder -->
+        </div>
 
-        <div id="bottom_bar" class="cf">
+        <div id="bottom-bar">
             <?php if ($isInWishlist) : ?>
-                <p>This destination is in your <a href="my_wishlist.php">wishlist</a>.</p>
                 <form action="" method="post">
-                    <div class="wishlist wrapper">
+                    <div class="wishlist">
                         <input type="hidden" name="destination_id" value="<?= $destination->id; ?>" />
                         <input type="submit" name="remove_from_wishlist" value="Remove from My Wishlist">
                     </div>
                 </form>
             <?php else : ?>
                 <form action="" method="post">
-                    <div class="wishlist wrapper">
+                    <div class="wishlist">
                         <input type="hidden" name="destination_id" value="<?= $destination->id; ?>" />
                         <input type="submit" name="add_to_wishlist" value="Add to My Wishlist">
                     </div>
                 </form>
             <?php endif; ?>
-        </div><!-- end bottom bar -->
-    </section><!-- end destination-page -->
+        </div>
+    </section>
 </div><!-- end wrapper -->
 <?php
     include "partials/footer.php";

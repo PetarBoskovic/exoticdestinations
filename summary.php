@@ -25,13 +25,13 @@
     include 'partials/header.php';
 ?>
 
-<div class="wrapper">
-    <section id="destinations-page">
+<div class="summary-wrapper">
+    <section id="destination-page">
         <div id="top_bar" class="cf">
             <div class="choose">
                 <p>Reservation Details</p>
             </div>
-        </div><!-- end top bar -->
+        </div>
         <div class="destination-info">
             <h1><?= $destination->title; ?></h1>
             <p><?= $destination->description; ?></p>
@@ -48,11 +48,11 @@
                         <div class="reserve_holder">
                             <input type="submit" name="confirm" value="Confirm">
                         </div>
-                    </div><!-- end destination_details -->
-                </div><!-- end middle bar -->
+                    </div>
+                </div>
             </form>
         </div>
-    </section><!-- end choose_bar -->
+    </section>
 </div><!-- end wrapper -->
 <?php
     include 'partials/footer.php';

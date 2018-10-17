@@ -21,14 +21,12 @@
 
     include "partials/header.php";
 ?>
-<div class="wrapper">
-
-    
+<div class="main-wrapper">
     <section id="destinations-page">
     <?php if (!empty($messageForUser)) : ?>
         <div class="alert alert-success"><?= $messageForUser; ?></div>
     <?php endif; ?>
-        <div id="top_bar" class="cf">
+        <div id="top-bar" class="cf">
             <div class="choose">
                 <p>Search Offers</p>
             </div>
@@ -59,10 +57,10 @@
             </a>
             <?php endforeach; ?>
             <?php else : ?>
-            <p>Sorry, no destinations, yet.</p>
+            <p>Sorry, no destinations!</p>
             <?php endif; ?>
         </div>
-    </section><!-- end choose_bar -->
+    </section>
 
 </div>
 
