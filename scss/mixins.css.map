@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAuEA,8BAA8B;AAkC9B,6BAA6B",
+"sources": ["mixins.scss"],
 "names": [],
 "file": "mixins.css"
 }

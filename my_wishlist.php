@@ -12,9 +12,9 @@
 ?>
 
 <section id="wishlist-wrapper">
-    <div class="top_bar" class="cf">
-        <div id="center-wishlist" class="choose">
-            <p>My Wishlist<i class="far fa-heart"></i></p>
+    <div class="top-bar">
+        <div id="center-wishlist">
+            <p>My Wishlist&nbsp;<i class="far fa-heart"></i></p>
         </div>
     </div>
     <div id="destinations-list">

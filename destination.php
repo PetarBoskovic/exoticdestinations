@@ -64,7 +64,7 @@
         <?php if (!empty($messageForUser)) : ?>
             <div class="alert alert-success"><?= $messageForUser; ?></div>
         <?php endif; ?>
-        <div>
+        <div>   
             <h1><?= $destination->title; ?></h1>
             <p><?= $destination->description; ?></p>
             <img src="<?= $destination->img_path; ?>" alt="<?= $destination->title; ?>">

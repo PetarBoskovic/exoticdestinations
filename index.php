@@ -26,7 +26,7 @@
     <?php if (!empty($messageForUser)) : ?>
         <div class="alert alert-success"><?= $messageForUser; ?></div>
     <?php endif; ?>
-        <div id="top-bar" class="cf">
+        <div id="top-bar">
             <div class="choose">
                 <p>Search Offers</p>
             </div>
@@ -61,7 +61,6 @@
             <?php endif; ?>
         </div>
     </section>
-
 </div>
 
 <?php

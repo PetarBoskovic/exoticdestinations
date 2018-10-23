@@ -1,10 +1,11 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
     <title>Exotic Destinations</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style1.css" rel="stylesheet" type="text/css">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="js/app.js"></script>
@@ -12,7 +13,7 @@
 
 <body>
     <header id="header">
-        <div class="wrapper">
+        <div class="wrapper">   
             <div id="logo">
                 <a href="index.php">
                     <img src="images/exotic_destinations_logo.svg" alt="Exotic Destination">
@@ -25,6 +26,6 @@
                     <li><a href="login.php">Login</a></li>
                     <li><a href="register.php">Register</a></li>
                 </ul>
-            </nav>
+            </nav>  
         </div>
     </header>

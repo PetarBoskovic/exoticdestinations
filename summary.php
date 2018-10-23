@@ -27,7 +27,7 @@
 
 <div class="summary-wrapper">
     <section id="destination-page">
-        <div id="top_bar" class="cf">
+        <div id="top_bar">
             <div class="choose">
                 <p>Reservation Details</p>
             </div>
@@ -40,12 +40,12 @@
             <div class="destination-price">Price (per person): $<?= $destination->price; ?></div>
             <div class="destination-price">Total Price: $<?= $total_price; ?></div>
             <form action="booked.php" method="post">
-                <div class="cf">
-                    <div id="destination_details">
+                <div>
+                    <div id="destination-details">
                         <input type="hidden" name="destination_id" value="<?= $destination->id; ?>" />
                         <input type="hidden" name="total_price" value="<?= $total_price; ?>">
                         <input type="hidden" name="quantity" value="<?= $quantity; ?>">
-                        <div class="reserve_holder">
+                        <div class="reserve-holder">
                             <input type="submit" name="confirm" value="Confirm">
                         </div>
                     </div>
