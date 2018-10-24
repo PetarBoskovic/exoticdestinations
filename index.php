@@ -1,8 +1,6 @@
 <?php
     session_start();
-    include 'classes/DB.php';
-    include 'classes/Destination.php';
-    include 'classes/User.php';
+    include 'autoload.php';
 
     $destinations = Destination::getAll();
 
@@ -30,7 +28,7 @@
             <div class="choose">
                 <p>Search Offers</p>
             </div>
-        </div><!-- end top bar -->
+        </div>
 
         <div class="form-holder">
             <form action="" method="get">
@@ -47,7 +45,7 @@
             </form>
         </div><!-- end form_holder -->
         <div class="flex-container destinations-list">
-            <?php if (count($destinations)) : ?>
+            <?php if(count($destinations)) : ?>
             <?php foreach($destinations as $destination) : ?>
             <a href="destination.php?id=<?= $destination->id; ?>" class="destination-item">
                 <div class="destination-title">

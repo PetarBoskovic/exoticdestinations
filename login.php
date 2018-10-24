@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'classes/DB.php';
+    include 'autoload.php';
     $messageForUser = '';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -45,12 +45,10 @@
             </p>
             <?php endif; ?>
 
-        </div><!-- end login_form -->
+        </div>
+    </div>
 
-
-    </div><!-- end login_container -->
-
-    </section><!-- end choose_bar -->
+    </section>
 
     <?php
     include "partials/footer.php";

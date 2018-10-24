@@ -1,10 +1,6 @@
 <?php
     session_start();
-
-    include 'classes/DB.php';
-    include 'classes/Reservation.php';
-    include 'classes/User.php';
-    include 'classes/Destination.php';
+    include 'autoload.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirm'])) {
         

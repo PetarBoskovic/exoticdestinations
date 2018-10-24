@@ -1,9 +1,6 @@
 <?php
     session_start();
-    include "classes/DB.php";
-    include "classes/Wishlist.php";
-    include "classes/User.php";
-    include "classes/Destination.php";
+    include 'autoload.php';
 
     $user = User::current();
     $destinations = Wishlist::getDestinationsByUserId($user->id);

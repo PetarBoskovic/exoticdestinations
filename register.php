@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'classes/DB.php';
+    include 'autoload.php';
     $messageForUser = '';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -48,9 +48,9 @@
                     <?php echo $messageForUser; ?>
                 </p>
             <?php endif; ?>
-        </div><!-- end register_form --> 
-    </div><!-- end register_container -->  
-</div><!-- end wrapper -->      
+        </div>
+    </div>
+</div>   
 
 <?php
     include "partials/footer.php";

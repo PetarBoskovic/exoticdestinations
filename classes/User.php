@@ -12,7 +12,7 @@ class User {
             $this->username = $username;
         }
         if ($password !== null) {
-            $this->password = md5($password);
+            $this->password = $password;
         }
         if ($email !== null) {
             $this->email = md5($email);

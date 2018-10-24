@@ -1,9 +1,6 @@
 <?php
     session_start();
-    include 'classes/DB.php';
-    include 'classes/Destination.php';
-    include 'classes/User.php';
-    include 'classes/Wishlist.php';
+    include 'autoload.php';
 
     $messageForUser = '';
 
